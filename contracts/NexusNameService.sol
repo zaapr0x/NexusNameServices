@@ -27,7 +27,7 @@ contract NexusNameService is ERC721URIStorage, Ownable {
     event NameTransferred(string indexed name, address indexed newOwner);
     event NameRenewed(string indexed name, uint256 newExpiration);
 
-    constructor(address initialOwner) ERC721("NexusNameNFT", "NNFT") Ownable(initialOwner) {}
+    constructor(address initialOwner) ERC721("NexusNameService", "NNS") Ownable(initialOwner) {}
 
     modifier onlyOwnerOf(string memory name) {
         require(domains[name].owner == msg.sender, "Not the owner");
